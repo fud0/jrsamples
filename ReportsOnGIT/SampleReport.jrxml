@@ -13,7 +13,7 @@
 		</conditionalStyle>
 	</style>
 	<queryString>
-		<![CDATA[select * from orders ]]>
+		<![CDATA[select * from orders]]>
 	</queryString>
 	<field name="ORDERID" class="java.lang.Integer"/>
 	<field name="CUSTOMERID" class="java.lang.String"/>
@@ -55,10 +55,6 @@
 	</background>
 	<title>
 		<band height="132" splitType="Stretch">
-			<image>
-				<reportElement x="456" y="0" width="99" height="132" uuid="b4164bc4-6de7-4f4d-9c71-e276926b6584"/>
-				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
-			</image>
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="fce98675-ebe6-45aa-8ba2-f1c561b5e871"/>
 				<staticText>
