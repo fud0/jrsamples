@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 5.6.1.qualifier using JasperReports Library version 5.6.0  -->
-<!-- 2014-07-25T11:48:38 -->
+<!-- 2014-07-25T14:10:13 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc6c8d13-9ee8-42c2-97bf-52f3768a556b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
 	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
@@ -42,7 +42,7 @@
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="0c93ae6b-1285-45d5-ac5a-81d948559abe"/>
 				<staticText>
-					<reportElement style="Title" x="0" y="0" width="406" height="66" uuid="a4b92226-0835-49f0-8707-991a0ec9d8d5"/>
+					<reportElement style="Title" x="0" y="0" width="220" height="66" uuid="a4b92226-0835-49f0-8707-991a0ec9d8d5"/>
 					<textElement>
 						<font isBold="false"/>
 					</textElement>
