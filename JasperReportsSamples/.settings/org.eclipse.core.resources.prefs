@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//barbecue/BarbecueReport.jrxml=UTF-8
+encoding//beanshell/BeanShellReport.jrxml=UTF-8
+encoding//book/BookReport.jrxml=UTF-8
+encoding//crosstabs/LateOrdersReport.jrxml=UTF-8
+encoding//crosstabs/OrdersReport.jrxml=UTF-8
+encoding//crosstabs/ProductsReport.jrxml=UTF-8
+encoding//crosstabs/ShipmentsReport.jrxml=UTF-8
+encoding//csvdatasource/CsvDataSourceReport.jrxml=UTF-8
+encoding//csvdatasource/CsvQueryExecuterReport.jrxml=UTF-8
+encoding//datasource/DataSourceReport1.jrxml=UTF-8
+encoding//datasource/DataSourceReport2.jrxml=UTF-8
+encoding//datasource/DataSourceReport3.jrxml=UTF-8
+encoding//datasource/DataSourceReport4.jrxml=UTF-8
+encoding//functions/FunctionsReport.jrxml=UTF-8
