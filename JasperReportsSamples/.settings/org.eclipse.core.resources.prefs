@@ -26,6 +26,7 @@ encoding//charts/XYBarChartReport.jrxml=UTF-8
 encoding//charts/XYBarChartTimePeriodReport.jrxml=UTF-8
 encoding//charts/XYBarChartTimeSeriesReport.jrxml=UTF-8
 encoding//charts/XYLineChartReport.jrxml=UTF-8
+encoding//chartthemes/AllChartsReport.jrxml=UTF-8
 encoding//crosstabs/LateOrdersReport.jrxml=UTF-8
 encoding//crosstabs/OrdersReport.jrxml=UTF-8
 encoding//crosstabs/ProductsReport.jrxml=UTF-8
