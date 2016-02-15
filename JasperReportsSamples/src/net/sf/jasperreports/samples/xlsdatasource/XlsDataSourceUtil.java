@@ -21,47 +21,33 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with JasperReports. If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.jasperreports.samples.jchartscomponent;
+package net.sf.jasperreports.samples.xlsdatasource;
 
-import net.sf.jasperreports.engine.JRExpression;
-import net.sf.jasperreports.engine.JRExpressionCollector;
-import net.sf.jasperreports.engine.design.JRDesignElementDataset;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.ExcelDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  * 
- * @author Lucian Chirita (lucianc@users.sourceforge.net)
+ * @author Massimo Rabbi (mrabbi@users.sourceforge.net)
+ *
  */
-public class DesignAxisDataset extends JRDesignElementDataset implements AxisDataset
-{
+public class XlsDataSourceUtil {
+
+	private static String XLS_PATH_PREFIX = XlsDataSourceUtil.class.getProtectionDomain().getCodeSource().getLocation().getPath() + "../xlsdatasource/";
 	
-	private static final long serialVersionUID = 1L;
-	
-	private JRExpression labelExpression;
-	private JRExpression valueExpression;
+	public static JRDataSource getXlsDataSource() {
+		ExcelDataSource ds = null;
 
-	public void collectExpressions(JRExpressionCollector collector)
-	{
-		AxisChartCompiler.collectExpressions(this, collector);
-	}
-	
-	public JRExpression getLabelExpression()
-	{
-		return labelExpression;
-	}
-
-	public void setLabelExpression(JRExpression labelExpression)
-	{
-		this.labelExpression = labelExpression;
-	}
-
-	public JRExpression getValueExpression()
-	{
-		return valueExpression;
-	}
-
-	public void setValueExpression(JRExpression valueExpression)
-	{
-		this.valueExpression = valueExpression;
+		try {
+			String[] columnNames = new String[] { "city", "id", "name", "address", "state" };
+			int[] columnIndexes = new int[] { 0, 2, 3, 4, 5 };
+			ds = new ExcelDataSource(JRLoader.getLocationInputStream(XLS_PATH_PREFIX+"data/XlsDataSource.data.xls"));
+			ds.setColumnNames(columnNames, columnIndexes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ds;
 	}
 
 }

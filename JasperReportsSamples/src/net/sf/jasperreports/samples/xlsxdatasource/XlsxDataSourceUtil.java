@@ -21,31 +21,35 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with JasperReports. If not, see <http://www.gnu.org/licenses/>.
  */
-package net.sf.jasperreports.samples.jchartscomponent;
+package net.sf.jasperreports.samples.xlsxdatasource;
 
-import net.sf.jasperreports.engine.component.Component;
-import net.sf.jasperreports.engine.component.ComponentFillFactory;
-import net.sf.jasperreports.engine.component.FillComponent;
-import net.sf.jasperreports.engine.fill.JRFillCloneFactory;
-import net.sf.jasperreports.engine.fill.JRFillObjectFactory;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRXlsxDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  * 
- * @author Lucian Chirita (lucianc@users.sourceforge.net)
+ * @author Massimo Rabbi (mrabbi@users.sourceforge.net)
+ *
  */
-public class AxisChartFillFactory implements ComponentFillFactory
-{
+public class XlsxDataSourceUtil {
 
-	public FillComponent toFillComponent(Component component,
-			JRFillObjectFactory factory)
-	{
-		return new FillAxisChart((AxisChartComponent) component, factory);
-	}
+	private static String XLSX_PATH_PREFIX = XlsxDataSourceUtil.class.getProtectionDomain().getCodeSource()
+			.getLocation().getPath() + "../xlsxdatasource/";
 
-	public FillComponent cloneFillComponent(FillComponent component,
-			JRFillCloneFactory factory)
-	{
-		throw new UnsupportedOperationException();
+	public static JRDataSource getXlsxDataSource() {
+		JRXlsxDataSource ds = null;
+
+		try {
+			String[] columnNames = new String[] { "city", "id", "name", "address", "state", "date" };
+			int[] columnIndexes = new int[] { 0, 2, 3, 4, 5, 6 };
+			ds = new JRXlsxDataSource(JRLoader.getLocationInputStream(XLSX_PATH_PREFIX+"data/MultisheetXlsxDataSource.data.xlsx"));
+			ds.setColumnNames(columnNames, columnIndexes);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return ds;
 	}
 
 }
