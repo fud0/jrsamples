@@ -4,13 +4,13 @@
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="OrderCountStyle" style="Sans_Normal">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[new Boolean($V{OrderCount}.intValue() > 0 && $V{OrderCount}.intValue() % 10 == 0)]]></conditionExpression>
+			<conditionExpression><![CDATA[$V{OrderCount} > 0 && $V{OrderCount} % 10 == 0]]></conditionExpression>
 			<style forecolor="#FF0000" isBold="true"/>
 		</conditionalStyle>
 	</style>
 	<style name="CellStyle" mode="Opaque">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[new Boolean($V{ROW_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<conditionExpression><![CDATA[$V{ROW_COUNT} % 2 == 0]]></conditionExpression>
 			<style backcolor="#E0E0E0"/>
 		</conditionalStyle>
 	</style>
