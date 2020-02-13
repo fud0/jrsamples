@@ -1,6 +1,6 @@
 /*
  * JasperReports - Free Java Reporting Library.
- * Copyright (C) 2001 - 2014 TIBCO Software Inc. All rights reserved.
+ * Copyright (C) 2001 - 2019 TIBCO Software Inc. All rights reserved.
  * http://www.jaspersoft.com
  *
  * Unless you have purchased a commercial license agreement from Jaspersoft,
@@ -31,16 +31,11 @@ import java.util.Map;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
-import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.util.AbstractSampleApp;
-import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleHtmlExporterOutput;
 
 
 /**
  * @author Teodor Danciu (teodord@users.sourceforge.net)
- * @version $Id:ChartsApp.java 2317 2008-08-27 09:06:42Z teodord $
  */
 public class ChartsApp extends AbstractSampleApp
 {
@@ -55,15 +50,12 @@ public class ChartsApp extends AbstractSampleApp
 	}
 	
 	
-	/**
-	 *
-	 */
+	@Override
 	public void test() throws JRException
 	{
 		fill();
 		pdf();
-		html();//FIXMESAMPLES move to xhtml everywhere
-		xhtml();
+		html();
 	}
 
 
@@ -73,7 +65,7 @@ public class ChartsApp extends AbstractSampleApp
 	public void fill() throws JRException
 	{
 		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("MaxOrderID", new Integer(12500));
+		parameters.put("MaxOrderID", 12500);
 		
 		File[] files = getFiles(new File("build/reports"), "jasper");
 		for(int i = 0; i < files.length; i++)
@@ -82,7 +74,7 @@ public class ChartsApp extends AbstractSampleApp
 			long start = System.currentTimeMillis();
 			JasperFillManager.fillReportToFile(
 				reportFile.getAbsolutePath(), 
-				parameters, 
+				new HashMap<String, Object>(parameters), 
 				getDemoHsqldbConnection()
 				);
 			System.err.println("Report : " + reportFile + ". Filling time : " + (System.currentTimeMillis() - start));
@@ -122,36 +114,6 @@ public class ChartsApp extends AbstractSampleApp
 				reportFile.getAbsolutePath()
 				);
 			System.err.println("Report : " + reportFile + ". HTML export time : " + (System.currentTimeMillis() - start));
-		}
-	}
-
-
-	/**
-	 *
-	 */
-	@SuppressWarnings("deprecation")
-	public void xhtml() throws JRException
-	{
-		File[] files = getFiles(new File("build/reports"), "jrprint");
-		for(int i = 0; i < files.length; i++)
-		{
-			File sourceFile = files[i];
-			long start = System.currentTimeMillis();
-
-			JasperPrint jasperPrint = (JasperPrint)JRLoader.loadObject(sourceFile);
-
-			File destFile = new File(sourceFile.getParent(), jasperPrint.getName() + ".x.html");
-			
-			net.sf.jasperreports.engine.export.JRXhtmlExporter exporter = 
-				new net.sf.jasperreports.engine.export.JRXhtmlExporter();
-
-			exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
-			exporter.setExporterOutput(new SimpleHtmlExporterOutput(destFile));
-			//exporter.setParameter(JRHtmlExporterParameter.ZOOM_RATIO, new Float(3f));
-
-			exporter.exportReport();
-
-			System.err.println("Report : " + sourceFile + ". XHTML export time : " + (System.currentTimeMillis() - start));
 		}
 	}
 
