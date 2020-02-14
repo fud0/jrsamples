@@ -18,7 +18,7 @@
 		<defaultValueExpression><![CDATA[new HashSet(Arrays.asList(new String[] { "Trial", "Active", "Suspended", "Deleted", }))]]></defaultValueExpression>
 	</parameter>
 	<parameter name="net.sf.jasperreports.csv.record.delimiter" class="java.lang.String">
-		<defaultValueExpression><![CDATA["\n"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["\r\n"]]></defaultValueExpression>
 	</parameter>
 	<queryString language="csv">
 		<![CDATA[]]>
@@ -43,7 +43,7 @@
 	<variable name="CityNumber" class="java.lang.Integer" incrementType="Group" incrementGroup="CityGroup" calculation="Count">
 		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
 	</variable>
-	<filterExpression><![CDATA[$P{IncludedStates}.contains($F{state}) ? Boolean.TRUE : Boolean.FALSE]]></filterExpression>
+	<filterExpression><![CDATA[$P{IncludedStates}.contains($F{state})]]></filterExpression>
 	<group name="CityGroup" minHeightToStartNewPage="60">
 		<groupExpression><![CDATA[$F{city}]]></groupExpression>
 		<groupHeader>
@@ -124,7 +124,7 @@
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA[$F{name} + " (" + $F{id} + ")"]]></anchorNameExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="50" y="0" width="200" height="15" uuid="c9b14a7d-6c89-40c0-a19c-ef6f0418b5b7"/>
 				<box leftPadding="10" rightPadding="10">
 					<leftPen lineWidth="0.5"/>
@@ -132,7 +132,7 @@
 				</box>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="250" y="0" width="265" height="15" uuid="8451ae35-32b1-4cee-aee6-dcb793d89226"/>
 				<box leftPadding="10" rightPadding="10">
 					<leftPen lineWidth="0.5"/>
