@@ -6,15 +6,9 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<import value="net.sf.jasperreports.engine.data.JRCsvDataSource"/>
 	<subDataset name="categoryDataset" uuid="f674686b-b3b5-451d-a81b-3617caa71a9f">
-		<field name="full_name" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="amount" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="sales_state" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
+		<field name="full_name" class="java.lang.String"/>
+		<field name="amount" class="java.lang.Integer"/>
+		<field name="sales_state" class="java.lang.String"/>
 		<variable name="personAmount" class="java.lang.Integer" resetType="Group" resetGroup="salesState" calculation="Sum">
 			<variableExpression><![CDATA[$F{amount}]]></variableExpression>
 		</variable>
@@ -26,12 +20,8 @@
 		</group>
 	</subDataset>
 	<subDataset name="pieDataset" uuid="ac545e36-b2d4-4503-95ad-6b6a44234478">
-		<field name="amount" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="sales_state" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
+		<field name="amount" class="java.lang.Integer"/>
+		<field name="sales_state" class="java.lang.String"/>
 		<variable name="personAmount" class="java.lang.Integer" resetType="Group" resetGroup="salesState" calculation="Sum">
 			<variableExpression><![CDATA[$F{amount}]]></variableExpression>
 		</variable>
@@ -40,15 +30,9 @@
 		</group>
 	</subDataset>
 	<subDataset name="xyDataset" uuid="098b0755-483e-40aa-8ada-b6eaaa95a155">
-		<field name="amount" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="probability" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="sales_state" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
+		<field name="amount" class="java.lang.Integer"/>
+		<field name="probability" class="java.lang.Integer"/>
+		<field name="sales_state" class="java.lang.String"/>
 		<group name="salesState">
 			<groupExpression><![CDATA[$F{sales_state}]]></groupExpression>
 		</group>
@@ -60,15 +44,9 @@
 		</group>
 	</subDataset>
 	<subDataset name="timeSeriesDataset" uuid="1a67ae5c-afb5-4e60-92d7-6cad76bc836c">
-		<field name="amount" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="date_closed" class="java.util.Date">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="sales_stage" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
+		<field name="amount" class="java.lang.Integer"/>
+		<field name="date_closed" class="java.util.Date"/>
+		<field name="sales_stage" class="java.lang.String"/>
 		<variable name="monthAmount" class="java.lang.Integer" resetType="Group" resetGroup="month" calculation="Sum">
 			<variableExpression><![CDATA[$F{amount}]]></variableExpression>
 		</variable>
@@ -76,33 +54,21 @@
 			<groupExpression><![CDATA[$F{sales_stage}]]></groupExpression>
 		</group>
 		<group name="month">
-			<groupExpression><![CDATA[Integer.valueOf($F{date_closed}.getMonth())]]></groupExpression>
+			<groupExpression><![CDATA[$F{date_closed}.getMonth()]]></groupExpression>
 		</group>
 	</subDataset>
 	<subDataset name="timePeriodDataset" uuid="233d14b1-b17f-40bd-9885-eb7d3296f2f2">
-		<field name="amount" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="start_year" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="start_month" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="close_year" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="close_month" class="java.lang.Integer">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
-		<field name="sales_state" class="java.lang.String">
-			<fieldDescription><![CDATA[]]></fieldDescription>
-		</field>
+		<field name="amount" class="java.lang.Integer"/>
+		<field name="start_year" class="java.lang.Integer"/>
+		<field name="start_month" class="java.lang.Integer"/>
+		<field name="close_year" class="java.lang.Integer"/>
+		<field name="close_month" class="java.lang.Integer"/>
+		<field name="sales_state" class="java.lang.String"/>
 		<variable name="startDate" class="java.util.Date">
-			<variableExpression><![CDATA[new Date($F{start_year}.intValue() - 1900, $F{start_month}.intValue(), 1)]]></variableExpression>
+			<variableExpression><![CDATA[new Date($F{start_year} - 1900, $F{start_month}, 1)]]></variableExpression>
 		</variable>
 		<variable name="closeDate" class="java.util.Date">
-			<variableExpression><![CDATA[new Date($F{close_year}.intValue() - 1900, $F{close_month}.intValue(), 1)]]></variableExpression>
+			<variableExpression><![CDATA[new Date($F{close_year} - 1900, $F{close_month}, 1)]]></variableExpression>
 		</variable>
 	</subDataset>
 	<subDataset name="meterDataset" uuid="0af8681f-08c0-490a-a9fd-736bbab0b273"/>
@@ -161,8 +127,7 @@
 	<parameter name="xyDatasource5" class="net.sf.jasperreports.engine.data.JRCsvDataSource">
 		<defaultValueExpression><![CDATA[net.sf.jasperreports.samples.chartthemes.ChartThemesUtil.createXYDatasource()]]></defaultValueExpression>
 	</parameter>
-	<group name="Bar">
-		<groupExpression><![CDATA[null]]></groupExpression>
+	<group name="Charts">
 		<groupHeader>
 			<band height="400">
 				<barChart>
@@ -203,11 +168,6 @@
 					</barPlot>
 				</barChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="StackedBar">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<stackedBarChart>
 					<chart evaluationTime="Report">
@@ -247,11 +207,6 @@
 					</barPlot>
 				</stackedBarChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Bar3D">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<bar3DChart>
 					<chart evaluationTime="Report">
@@ -291,11 +246,6 @@
 					</bar3DPlot>
 				</bar3DChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="StackedBar3D">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<stackedBar3DChart>
 					<chart evaluationTime="Report">
@@ -335,11 +285,6 @@
 					</bar3DPlot>
 				</stackedBar3DChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Pie">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<pieChart>
 					<chart evaluationTime="Report">
@@ -368,11 +313,6 @@
 					</piePlot>
 				</pieChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Pie3D">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<pie3DChart>
 					<chart evaluationTime="Report">
@@ -401,11 +341,6 @@
 					</pie3DPlot>
 				</pie3DChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Area">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<areaChart>
 					<chart evaluationTime="Report">
@@ -444,11 +379,6 @@
 					</areaPlot>
 				</areaChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="StackedArea">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<stackedAreaChart>
 					<chart evaluationTime="Report">
@@ -487,11 +417,6 @@
 					</areaPlot>
 				</stackedAreaChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Line">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<lineChart>
 					<chart evaluationTime="Report">
@@ -530,11 +455,6 @@
 					</linePlot>
 				</lineChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="XyLine">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<xyLineChart>
 					<chart evaluationTime="Report">
@@ -557,7 +477,7 @@
 						<xySeries>
 							<seriesExpression><![CDATA[$F{sales_state}]]></seriesExpression>
 							<xValueExpression><![CDATA[$F{probability}]]></xValueExpression>
-							<yValueExpression><![CDATA[new Double($F{amount}.doubleValue() + $F{amount}.doubleValue() * Math.sin($V{REPORT_COUNT}.doubleValue() * Math.log(1 + $V{REPORT_COUNT}.doubleValue())))]]></yValueExpression>
+							<yValueExpression><![CDATA[$F{amount} + $F{amount} * Math.sin($V{REPORT_COUNT} * Math.log(1 + $V{REPORT_COUNT}))]]></yValueExpression>
 						</xySeries>
 					</xyDataset>
 					<linePlot isShowShapes="false">
@@ -573,11 +493,6 @@
 					</linePlot>
 				</xyLineChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="XyBar">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<xyBarChart>
 					<chart evaluationTime="Report">
@@ -617,11 +532,6 @@
 					</barPlot>
 				</xyBarChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="XyBarTimePeriod">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<xyBarChart>
 					<chart evaluationTime="Report">
@@ -662,11 +572,6 @@
 					</barPlot>
 				</xyBarChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="XyBarTimeSeries">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<xyBarChart>
 					<chart evaluationTime="Report">
@@ -707,11 +612,6 @@
 					</barPlot>
 				</xyBarChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="XyArea">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<xyAreaChart>
 					<chart evaluationTime="Report">
@@ -750,11 +650,6 @@
 					</areaPlot>
 				</xyAreaChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Scatter">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<scatterChart>
 					<chart evaluationTime="Report">
@@ -777,7 +672,7 @@
 						<xySeries>
 							<seriesExpression><![CDATA[$F{sales_state}]]></seriesExpression>
 							<xValueExpression><![CDATA[$F{probability}]]></xValueExpression>
-							<yValueExpression><![CDATA[new Double(200000 + 200000 * Math.sin($V{REPORT_COUNT}.doubleValue() * Math.log(1 + $V{REPORT_COUNT}.doubleValue())))]]></yValueExpression>
+							<yValueExpression><![CDATA[200000 + 200000 * Math.sin($V{REPORT_COUNT} * Math.log(1 + $V{REPORT_COUNT}))]]></yValueExpression>
 						</xySeries>
 					</xyDataset>
 					<scatterPlot isShowLines="false">
@@ -793,11 +688,6 @@
 					</scatterPlot>
 				</scatterChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Bubble">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<bubbleChart>
 					<chart evaluationTime="Report">
@@ -820,8 +710,8 @@
 						<xyzSeries>
 							<seriesExpression><![CDATA[$F{sales_state}]]></seriesExpression>
 							<xValueExpression><![CDATA[$F{probability}]]></xValueExpression>
-							<yValueExpression><![CDATA[new Double(200000 + 200000 * Math.sin($V{REPORT_COUNT}.doubleValue() * Math.log(1 + $V{REPORT_COUNT}.doubleValue())))]]></yValueExpression>
-							<zValueExpression><![CDATA[new Double(25000 + 20000 * Math.sin($F{probability}.doubleValue() * Math.log(1 + $F{amount}.doubleValue())))]]></zValueExpression>
+							<yValueExpression><![CDATA[200000 + 200000 * Math.sin($V{REPORT_COUNT} * Math.log(1 + $V{REPORT_COUNT}))]]></yValueExpression>
+							<zValueExpression><![CDATA[25000 + 20000 * Math.sin($F{probability} * Math.log(1 + $F{amount}))]]></zValueExpression>
 						</xyzSeries>
 					</xyzDataset>
 					<bubblePlot scaleType="RangeAxis">
@@ -837,11 +727,6 @@
 					</bubblePlot>
 				</bubbleChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="TimeSeries">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<timeSeriesChart>
 					<chart evaluationTime="Report">
@@ -881,11 +766,6 @@
 					</timeSeriesPlot>
 				</timeSeriesChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="HighLow">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<highLowChart>
 					<chart evaluationTime="Report">
@@ -907,11 +787,11 @@
 						</dataset>
 						<seriesExpression><![CDATA[$F{sales_stage}]]></seriesExpression>
 						<dateExpression><![CDATA[$F{date_closed}]]></dateExpression>
-						<highExpression><![CDATA[new Double($V{monthAmount}.doubleValue() + $V{monthAmount}.doubleValue()*0.6)]]></highExpression>
-						<lowExpression><![CDATA[new Double($V{monthAmount}.doubleValue() - $V{monthAmount}.doubleValue()*0.6)]]></lowExpression>
-						<openExpression><![CDATA[new Double($V{monthAmount}.doubleValue() - $V{monthAmount}.doubleValue()*0.3)]]></openExpression>
-						<closeExpression><![CDATA[new Double($V{monthAmount}.doubleValue() + $V{monthAmount}.doubleValue()*0.4)]]></closeExpression>
-						<volumeExpression><![CDATA[new Double($V{monthAmount}.doubleValue() / 2)]]></volumeExpression>
+						<highExpression><![CDATA[$V{monthAmount} + $V{monthAmount} * 0.6d]]></highExpression>
+						<lowExpression><![CDATA[$V{monthAmount} - $V{monthAmount} * 0.6d]]></lowExpression>
+						<openExpression><![CDATA[$V{monthAmount} - $V{monthAmount} * 0.3d]]></openExpression>
+						<closeExpression><![CDATA[$V{monthAmount} + $V{monthAmount} * 0.4d]]></closeExpression>
+						<volumeExpression><![CDATA[$V{monthAmount} / 2d]]></volumeExpression>
 					</highLowDataset>
 					<highLowPlot>
 						<plot/>
@@ -926,11 +806,6 @@
 					</highLowPlot>
 				</highLowChart>
 			</band>
-		</groupHeader>
-	</group>
-	<group name="Meter">
-		<groupExpression><![CDATA[null]]></groupExpression>
-		<groupHeader>
 			<band height="400">
 				<meterChart>
 					<chart isShowLegend="false">
@@ -949,31 +824,31 @@
 								<dataSourceExpression><![CDATA[new JREmptyDataSource()]]></dataSourceExpression>
 							</datasetRun>
 						</dataset>
-						<valueExpression><![CDATA[new Double(7500.0)]]></valueExpression>
+						<valueExpression><![CDATA[7500.0d]]></valueExpression>
 					</valueDataset>
 					<meterPlot units="Freight" tickInterval="1000.0" meterColor="#777777" needleColor="#000066" tickColor="#0000FF">
 						<plot/>
 						<valueDisplay/>
 						<dataRange>
-							<lowExpression><![CDATA[new Double(0.0)]]></lowExpression>
-							<highExpression><![CDATA[new Double(17500.0)]]></highExpression>
+							<lowExpression><![CDATA[0.0d]]></lowExpression>
+							<highExpression><![CDATA[17500.0d]]></highExpression>
 						</dataRange>
 						<meterInterval label="Small">
 							<dataRange>
-								<lowExpression><![CDATA[new Double(0.0)]]></lowExpression>
-								<highExpression><![CDATA[new Double(2000.0)]]></highExpression>
+								<lowExpression><![CDATA[0.0d]]></lowExpression>
+								<highExpression><![CDATA[2000.0d]]></highExpression>
 							</dataRange>
 						</meterInterval>
 						<meterInterval label="Med">
 							<dataRange>
-								<lowExpression><![CDATA[new Double(2000.0)]]></lowExpression>
-								<highExpression><![CDATA[new Double(12000.0)]]></highExpression>
+								<lowExpression><![CDATA[2000.0d]]></lowExpression>
+								<highExpression><![CDATA[12000.0d]]></highExpression>
 							</dataRange>
 						</meterInterval>
 						<meterInterval label="Large">
 							<dataRange>
-								<lowExpression><![CDATA[new Double(12000.0)]]></lowExpression>
-								<highExpression><![CDATA[new Double(17500.0)]]></highExpression>
+								<lowExpression><![CDATA[12000.0d]]></lowExpression>
+								<highExpression><![CDATA[17500.0d]]></highExpression>
 							</dataRange>
 						</meterInterval>
 					</meterPlot>
