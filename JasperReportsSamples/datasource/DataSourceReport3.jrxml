@@ -16,14 +16,14 @@
 	<field name="id" class="java.lang.Integer"/>
 	<field name="name" class="java.lang.String"/>
 	<field name="street" class="java.lang.String"/>
-	<field name="city" class="java.lang.String">
-		<fieldDescription><![CDATA[me.city]]></fieldDescription>
+	<field name="the_city" class="java.lang.String">
+		<propertyExpression name="net.sf.jasperreports.javabean.field.property"><![CDATA["me.city"]]></propertyExpression>
 	</field>
 	<variable name="CityNumber" class="java.lang.Integer" incrementType="Group" incrementGroup="CityGroup" calculation="Count">
 		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
 	</variable>
 	<group name="CityGroup" minHeightToStartNewPage="60">
-		<groupExpression><![CDATA[$F{city}]]></groupExpression>
+		<groupExpression><![CDATA[$F{the_city}]]></groupExpression>
 		<groupHeader>
 			<band height="20">
 				<textField evaluationTime="Group" evaluationGroup="CityGroup" bookmarkLevel="1">
@@ -31,8 +31,8 @@
 					<box leftPadding="10">
 						<bottomPen lineWidth="1.0"/>
 					</box>
-					<textFieldExpression><![CDATA["  " + String.valueOf($V{CityNumber}) + ". " + String.valueOf($F{city})]]></textFieldExpression>
-					<anchorNameExpression><![CDATA[String.valueOf($F{city})]]></anchorNameExpression>
+					<textFieldExpression><![CDATA["  " + String.valueOf($V{CityNumber}) + ". " + String.valueOf($F{the_city})]]></textFieldExpression>
+					<anchorNameExpression><![CDATA[String.valueOf($F{the_city})]]></anchorNameExpression>
 				</textField>
 			</band>
 		</groupHeader>
@@ -102,7 +102,7 @@
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 				<anchorNameExpression><![CDATA[$F{name} + " (" + $F{id} + ")"]]></anchorNameExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="50" y="0" width="200" height="15" uuid="b98b57f4-ebed-4a29-b69f-b243445bff2d"/>
 				<box leftPadding="10" rightPadding="10">
 					<leftPen lineWidth="0.5"/>
@@ -110,7 +110,7 @@
 				</box>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="250" y="0" width="265" height="15" uuid="f3f2f70e-3138-4834-840c-a87253f1dc30"/>
 				<box leftPadding="10" rightPadding="10">
 					<leftPen lineWidth="0.5"/>
