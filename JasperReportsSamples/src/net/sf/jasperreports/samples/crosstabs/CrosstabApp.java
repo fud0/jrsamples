@@ -2,7 +2,7 @@ package net.sf.jasperreports.samples.crosstabs;
 
 /*
  * JasperReports - Free Java Reporting Library.
- * Copyright (C) 2001 - 2014 TIBCO Software Inc. All rights reserved.
+ * Copyright (C) 2001 - 2019 TIBCO Software Inc. All rights reserved.
  * http://www.jaspersoft.com
  *
  * Unless you have purchased a commercial license agreement from Jaspersoft,
@@ -43,7 +43,6 @@ import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
 import net.sf.jasperreports.engine.util.AbstractSampleApp;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.export.SimpleExporterInput;
-import net.sf.jasperreports.export.SimpleHtmlExporterOutput;
 import net.sf.jasperreports.export.SimpleOdsReportConfiguration;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimpleWriterExporterOutput;
@@ -77,13 +76,11 @@ public class CrosstabApp extends AbstractSampleApp
 		html();
 		rtf();
 		xls();
-		jxl();
 		odt();
 		ods();
 		docx();
 		xlsx();
 		pptx();
-		xhtml();
 		xmlEmbed();
 		xml();
 	}
@@ -262,39 +259,6 @@ public class CrosstabApp extends AbstractSampleApp
 	/**
 	 *
 	 */
-	@SuppressWarnings("deprecation")
-	public void jxl() throws JRException
-	{
-		File[] files = getFiles(new File("build/reports"), "jrprint");
-		for(int i = 0; i < files.length; i++)
-		{
-			long start = System.currentTimeMillis();
-			File sourceFile = files[i];
-
-			JasperPrint jasperPrint = (JasperPrint)JRLoader.loadObject(sourceFile);
-
-			File destFile = new File(sourceFile.getParent(), jasperPrint.getName() + ".jxl.xls");
-		
-			net.sf.jasperreports.engine.export.JExcelApiExporter exporter = 
-				new net.sf.jasperreports.engine.export.JExcelApiExporter();
-		
-			exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
-			exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(destFile));
-			net.sf.jasperreports.export.SimpleJxlReportConfiguration configuration = 
-				new net.sf.jasperreports.export.SimpleJxlReportConfiguration();
-			configuration.setOnePagePerSheet(true);
-			exporter.setConfiguration(configuration);
-		
-			exporter.exportReport();
-
-			System.err.println("Report : " + sourceFile + ". XLS creation time : " + (System.currentTimeMillis() - start));
-		}
-	}
-	
-	
-	/**
-	 *
-	 */
 	public void csv() throws JRException
 	{
 		File[] files = getFiles(new File("build/reports"), "jrprint");
@@ -371,7 +335,7 @@ public class CrosstabApp extends AbstractSampleApp
 		
 			exporter.exportReport();
 
-			System.err.println("Report : " + sourceFile + ". ODT creation time : " + (System.currentTimeMillis() - start));
+			System.err.println("Report : " + sourceFile + ". ODS creation time : " + (System.currentTimeMillis() - start));
 		}
 	}
 	
@@ -456,35 +420,6 @@ public class CrosstabApp extends AbstractSampleApp
 			exporter.exportReport();
 
 			System.err.println("Report : " + sourceFile + ". PPTX creation time : " + (System.currentTimeMillis() - start));
-		}
-	}
-	
-	
-	/**
-	 *
-	 */
-	@SuppressWarnings("deprecation")
-	public void xhtml() throws JRException
-	{
-		File[] files = getFiles(new File("build/reports"), "jrprint");
-		for(int i = 0; i < files.length; i++)
-		{
-			long start = System.currentTimeMillis();
-			File sourceFile = files[i];
-
-			JasperPrint jasperPrint = (JasperPrint)JRLoader.loadObject(sourceFile);
-
-			File destFile = new File(sourceFile.getParent(), jasperPrint.getName() + ".x.html");
-		
-			net.sf.jasperreports.engine.export.JRXhtmlExporter exporter = 
-				new net.sf.jasperreports.engine.export.JRXhtmlExporter();
-		
-			exporter.setExporterInput(new SimpleExporterInput(jasperPrint));
-			exporter.setExporterOutput(new SimpleHtmlExporterOutput(destFile));
-		
-			exporter.exportReport();
-
-			System.err.println("Report : " + sourceFile + ". XHTML creation time : " + (System.currentTimeMillis() - start));
 		}
 	}
 	
