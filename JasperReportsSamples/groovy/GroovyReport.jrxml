@@ -26,8 +26,8 @@
 				<textElement textAlignment="Center">
 					<font size="12"/>
 				</textElement>
-				<textFieldExpression><![CDATA["This sample uses Groovy Version 1.0 beta 10\n" + "http://groovy.codehaus.org/"]]></textFieldExpression>
-				<hyperlinkReferenceExpression><![CDATA["http://groovy.codehaus.org/"]]></hyperlinkReferenceExpression>
+				<textFieldExpression><![CDATA["This sample uses Apache Groovy\n" + "http://groovy-lang.org/"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["http://groovy-lang.org/"]]></hyperlinkReferenceExpression>
 			</textField>
 			<textField>
 				<reportElement x="280" y="150" width="200" height="35" uuid="41c1ebe8-7ec9-4254-89b6-474f9fa0d9b0"/>
@@ -69,7 +69,7 @@
 				<textElement>
 					<font size="24"/>
 				</textElement>
-				<textFieldExpression><![CDATA[new Double($P{A}.doubleValue() + $P{B}.doubleValue())]]></textFieldExpression>
+				<textFieldExpression><![CDATA[Double.valueOf($P{A}.doubleValue() + $P{B}.doubleValue())]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement positionType="Float" x="0" y="270" width="259" height="35" uuid="49d3f7b7-6606-4fd3-92e6-a15bf8dc1296"/>
