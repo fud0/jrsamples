@@ -1,6 +1,6 @@
 /*
  * JasperReports - Free Java Reporting Library.
- * Copyright (C) 2001 - 2014 TIBCO Software Inc. All rights reserved.
+ * Copyright (C) 2001 - 2019 TIBCO Software Inc. All rights reserved.
  * http://www.jaspersoft.com
  *
  * Unless you have purchased a commercial license agreement from Jaspersoft,
@@ -29,7 +29,6 @@ import net.sf.jasperreports.engine.export.JRHtmlExporterContext;
 
 /**
  * @author Lucian Chirita (lucianc@users.sourceforge.net)
- * @version $Id:ChartThemesUtilities.java 2595 2009-02-10 17:56:51Z teodord $
  */
 public class OhlohWidgetHtmlHandler implements
 		GenericElementHtmlHandler
@@ -58,6 +57,7 @@ public class OhlohWidgetHtmlHandler implements
 		this.projectIDParameter = projectIDParameter;
 	}
 
+	@Override
 	public boolean toExport(JRGenericPrintElement element)
 	{
 		return getProjectID(element) != null;
@@ -68,9 +68,10 @@ public class OhlohWidgetHtmlHandler implements
 		return (String) element.getParameterValue(getProjectIDParameter());
 	}
 
+	@Override
 	public String getHtmlFragment(JRHtmlExporterContext context, JRGenericPrintElement element)
 	{
-		StringBuffer script = new StringBuffer(128);
+		StringBuilder script = new StringBuilder(128);
 		script.append("<script type='text/javascript' src='https://www.openhub.net/p/");
 		script.append(getProjectID(element));
 		script.append("/widgets/");
