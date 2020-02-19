@@ -29,21 +29,11 @@
 	<queryString language="csv">
 		<![CDATA[]]>
 	</queryString>
-	<field name="id" class="java.lang.Integer">
-		<fieldDescription><![CDATA[id]]></fieldDescription>
-	</field>
-	<field name="name" class="java.lang.String">
-		<fieldDescription><![CDATA[name]]></fieldDescription>
-	</field>
-	<field name="address" class="java.lang.String">
-		<fieldDescription><![CDATA[street address]]></fieldDescription>
-	</field>
-	<field name="city" class="java.lang.String">
-		<fieldDescription><![CDATA[city]]></fieldDescription>
-	</field>
-	<field name="state" class="java.lang.String">
-		<fieldDescription><![CDATA[state]]></fieldDescription>
-	</field>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
 	<sortField name="city"/>
 	<sortField name="name"/>
 	<group name="cityGroup">
@@ -196,7 +186,7 @@
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="159" y="0" width="157" height="15" uuid="d469e1f8-8b8a-4b90-9aaa-9fb678d10f05"/>
 				<box leftPadding="10" rightPadding="10">
 					<topPen lineWidth="0.5"/>
@@ -205,7 +195,7 @@
 				</box>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="316" y="0" width="199" height="15" uuid="3109233a-45dd-46e8-9010-d72ad4c6fc44"/>
 				<box leftPadding="10" rightPadding="10">
 					<pen lineWidth="0.5"/>
