@@ -8,16 +8,16 @@
 		<![CDATA[/Northwind/Orders[CustomerID='$P{CustomerID}']]]>
 	</queryString>
 	<field name="Id" class="java.lang.String">
-		<fieldDescription><![CDATA[OrderID]]></fieldDescription>
+		<property name="net.sf.jasperreports.xpath.field.expression" value="OrderID"/>
 	</field>
 	<field name="OrderDate" class="java.util.Date">
-		<fieldDescription><![CDATA[OrderDate]]></fieldDescription>
+		<property name="net.sf.jasperreports.xpath.field.expression" value="OrderDate"/>
 	</field>
 	<field name="ShipCity" class="java.lang.String">
-		<fieldDescription><![CDATA[ShipCity]]></fieldDescription>
+		<property name="net.sf.jasperreports.xpath.field.expression" value="ShipCity"/>
 	</field>
 	<field name="Freight" class="java.lang.Float">
-		<fieldDescription><![CDATA[Freight]]></fieldDescription>
+		<property name="net.sf.jasperreports.xpath.field.expression" value="Freight"/>
 	</field>
 	<variable name="TotalFreight" class="java.lang.Float" calculation="Sum">
 		<variableExpression><![CDATA[$F{Freight}]]></variableExpression>
@@ -55,16 +55,16 @@
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{Id}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="yyyy, MMM dd">
+			<textField textAdjust="StretchHeight" pattern="yyyy, MMM dd">
 				<reportElement positionType="Float" x="54" y="2" width="87" height="10" uuid="1886b1ce-67ff-4457-89de-7baeae1446d0"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{OrderDate}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="146" y="2" width="108" height="10" uuid="c8ea91e7-4bc6-4059-99e6-ad296e4dcf26"/>
 				<textFieldExpression><![CDATA[$F{ShipCity}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="¤ #,##0.00">
+			<textField textAdjust="StretchHeight" pattern="¤ #,##0.00">
 				<reportElement positionType="Float" x="259" y="2" width="92" height="10" uuid="fe05b06c-95b5-4847-8567-130b3785c8dd"/>
 				<textElement textAlignment="Right"/>
 				<textFieldExpression><![CDATA[$F{Freight}]]></textFieldExpression>
