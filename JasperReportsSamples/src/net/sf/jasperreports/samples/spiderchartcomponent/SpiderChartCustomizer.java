@@ -1,6 +1,6 @@
 /*
  * JasperReports - Free Java Reporting Library.
- * Copyright (C) 2001 - 2014 TIBCO Software Inc. All rights reserved.
+ * Copyright (C) 2001 - 2019 TIBCO Software Inc. All rights reserved.
  * http://www.jaspersoft.com
  *
  * Unless you have purchased a commercial license agreement from Jaspersoft,
@@ -31,11 +31,11 @@ import net.sf.jasperreports.components.charts.ChartComponent;
 import org.jfree.chart.JFreeChart;
 
 /**
- * @author sanda zaharia (shertage@users.sourceforge.net)
+ * @author Sanda Zaharia (shertage@users.sourceforge.net)
  */
 public class SpiderChartCustomizer extends AbstractChartCustomizer
 {
-
+	@Override
 	public void customize(JFreeChart chart, ChartComponent chartComponent)
 	{
 		chart.getPlot().setOutlineVisible(true);
