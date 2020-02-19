@@ -84,6 +84,7 @@ encoding//templates/StylesReport.jrxml=UTF-8
 encoding//text/TextReport.jrxml=UTF-8
 encoding//unicode/UnicodeReport.jrxml=UTF-8
 encoding//virtualizer/VirtualizerReport.jrxml=UTF-8
+encoding//xchart/XChartReport.jrxml=UTF-8
 encoding//xlsdatasource/XlsDataSourceReport.jrxml=UTF-8
 encoding//xlsfeatures/MacroReport.jrxml=UTF-8
 encoding//xlsfeatures/XlsFeaturesReport.jrxml=UTF-8
