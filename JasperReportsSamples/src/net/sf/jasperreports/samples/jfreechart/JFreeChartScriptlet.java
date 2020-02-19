@@ -1,6 +1,6 @@
 /*
  * JasperReports - Free Java Reporting Library.
- * Copyright (C) 2001 - 2014 TIBCO Software Inc. All rights reserved.
+ * Copyright (C) 2001 - 2019 TIBCO Software Inc. All rights reserved.
  * http://www.jaspersoft.com
  *
  * Unless you have purchased a commercial license agreement from Jaspersoft,
@@ -27,15 +27,15 @@
  * David Gilbert - david.gilbert@object-refinery.com
  */
 package net.sf.jasperreports.samples.jfreechart;
-import net.sf.jasperreports.engine.JRDefaultScriptlet;
-import net.sf.jasperreports.engine.JRScriptletException;
-import net.sf.jasperreports.renderers.JCommonDrawableRenderer;
-
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PiePlot3D;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.util.Rotation;
+
+import net.sf.jasperreports.engine.JRDefaultScriptlet;
+import net.sf.jasperreports.engine.JRScriptletException;
+import net.sf.jasperreports.renderers.JCommonDrawableRendererImpl;
 
 
 /**
@@ -45,17 +45,15 @@ public class JFreeChartScriptlet extends JRDefaultScriptlet
 {
 
 
-	/**
-	 *
-	 */
+	@Override
 	public void afterReportInit() throws JRScriptletException
 	{
 		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue("Java", new Double(43.2));
-		dataset.setValue("Visual Basic", new Double(10.0));
-		dataset.setValue("C/C++", new Double(17.5));
-		dataset.setValue("PHP", new Double(32.5));
-		dataset.setValue("Perl", new Double(1.0));
+		dataset.setValue("Java", 43.2d);
+		dataset.setValue("Visual Basic", 10.0d);
+		dataset.setValue("C/C++", 17.5d);
+		dataset.setValue("PHP", 32.5d);
+		dataset.setValue("Perl", 1.0d);
 
 		JFreeChart chart = 
 			ChartFactory.createPieChart3D(
@@ -73,7 +71,7 @@ public class JFreeChartScriptlet extends JRDefaultScriptlet
 		plot.setNoDataMessage("No data to display");
 
 		/*   */
-		this.setVariableValue("Chart", new JCommonDrawableRenderer(chart));
+		this.setVariableValue("Chart", new JCommonDrawableRendererImpl(chart));
 	}
 
 
