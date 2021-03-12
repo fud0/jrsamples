@@ -1,0 +1,1 @@
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>testjdbcda</name><username>aaa</username><password>aaaa</password><url>jdbc:postgresql://localhost:5432/database</url><driver>org.postgresql.Driver</driver></jdbcDataAdapter>
