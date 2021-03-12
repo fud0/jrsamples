@@ -1,0 +1,1 @@
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl"><name>TEST JDBC on GITHUB</name><username>postgres</username><password>postgres</password><url>jdbc:postgresql://localhost:5432/sugarcrm</url><driver>org.postgresql.Driver</driver></jdbcDataAdapter>
