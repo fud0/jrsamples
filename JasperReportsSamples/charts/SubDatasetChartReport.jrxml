@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.1.qualifier using JasperReports Library version 6.2.1  -->
-<!-- 2015-12-14T13:39:53 -->
+<!-- Created with Jaspersoft Studio version 8.2.0.beta-v202303071619 using JasperReports Library version develop-92-SNAPSHOT-3aabe085bba32b6a58d35b634a8f650aedc15873  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubDatasetChartReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="c83ff4c3-c99d-4fbb-b1a9-54dda8194309">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<property name="net.sf.jasperreports.chart.render.type" value="svg"/>
+	<property name="net.sf.jasperreports.image.dpi" value="150"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Serif_Bold" fontName="DejaVu Serif" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<subDataset name="Country_Orders" uuid="d89be355-eac7-43cd-971d-21b8bf0bb71e">
@@ -67,7 +68,7 @@
 					<chartLegend/>
 				</chart>
 				<timeSeriesDataset timePeriod="Month">
-					<dataset incrementType="Group" incrementGroup="MonthGroup">
+					<dataset resetType="Report" incrementType="Group" incrementGroup="MonthGroup">
 						<datasetRun subDataset="Country_Orders" uuid="c8f3b123-7be5-4ea0-9002-5fc495821df5">
 							<datasetParameter name="Country">
 								<datasetParameterExpression><![CDATA[$F{ShipCountry}]]></datasetParameterExpression>
