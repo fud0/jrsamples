@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<csvDataAdapter class="net.sf.jasperreports.data.csv.CsvDataAdapterImpl">
+  <name>SampleCsvDataSource</name>
+  <dataFile type="repositoryDataLocation">
+    <location>CsvDataSource.txt</location>
+  </dataFile>
+  <recordDelimiter>
+</recordDelimiter>
+  <fieldDelimiter>,</fieldDelimiter>
+  <useFirstRowAsHeader>false</useFirstRowAsHeader>
+  <locale>en_IT</locale>
+  <timeZone>Europe/Rome</timeZone>
+  <queryExecuterMode>false</queryExecuterMode>
+  <columnNames>city</columnNames>
+  <columnNames>id</columnNames>
+  <columnNames>name</columnNames>
+  <columnNames>address</columnNames>
+  <columnNames>state</columnNames>
+</csvDataAdapter>

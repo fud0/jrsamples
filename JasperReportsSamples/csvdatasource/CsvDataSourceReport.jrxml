@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 7.9.0.qualifier using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<!-- Created with Jaspersoft Studio version 8.2.0.beta-v202303071619 using JasperReports Library version develop-92-SNAPSHOT-3aabe085bba32b6a58d35b634a8f650aedc15873  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CsvDataSourceReport" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="50" bottomMargin="50" uuid="cf9695b1-22d1-4645-b4bf-df690d992591">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="csvdatasource/SampleCsvDataSource.xml"/>
+	<property name="net.sf.jasperreports.data.adapter" value="SampleCsvDataSource.jrdax"/>
 	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Italic" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false"/>
@@ -156,13 +157,14 @@
 	</pageFooter>
 	<lastPageFooter>
 		<band height="60">
-			<textField bookmarkLevel="1">
+			<textField bookmarkLevel="2">
 				<reportElement x="0" y="10" width="515" height="15" uuid="8aacdf2b-4aad-40a4-a0b7-adaa73bcd938"/>
 				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA["There were " +
 					String.valueOf($V{REPORT_COUNT}) +
 					" address records on this report."]]></textFieldExpression>
 				<anchorNameExpression><![CDATA["Summary"]]></anchorNameExpression>
+				<bookmarkLevelExpression><![CDATA[1]]></bookmarkLevelExpression>
 			</textField>
 			<line>
 				<reportElement x="0" y="30" width="515" height="1" uuid="ade1242b-914a-4ceb-bc11-66ecc903cdab"/>
