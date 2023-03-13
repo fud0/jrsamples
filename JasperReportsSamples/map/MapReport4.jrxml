@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version master-SNAPSHOT-6e472359fc4a9df81af28ed20eabc5b49da61610  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MapReport4" pageWidth="515" pageHeight="692" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="e2942308-8a13-4147-be01-38c5b6adde78">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
 	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<subDataset name="MarkersDataset" uuid="2960515c-455f-4a48-9b5b-d216608cbc1e">
-		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapter.xml"/>
+		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapter.jrdax"/>
 		<queryString language="csv">
 			<![CDATA[]]>
 		</queryString>
@@ -15,7 +17,7 @@
 		<filterExpression><![CDATA[!($F{latitude}==null || $F{latitude}.length() == 0 || $F{longitude}==null || $F{longitude}.length() == 0)]]></filterExpression>
 	</subDataset>
 	<subDataset name="PathStyleDataset" uuid="0a614373-2dd9-48f3-b6da-8073f61b3fc3">
-		<property name="net.sf.jasperreports.data.adapter" value="/data/PathStyleDataAdapter.xml"/>
+		<property name="net.sf.jasperreports.data.adapter" value="/data/PathStyleDataAdapter.jrdax"/>
 		<queryString language="csv">
 			<![CDATA[]]>
 		</queryString>
@@ -29,7 +31,7 @@
 		<filterExpression><![CDATA[$F{name}!=null && $F{name}.length() != 0]]></filterExpression>
 	</subDataset>
 	<subDataset name="PathLocationDataset" uuid="e275a292-ba61-41c5-9c5b-e4ca9ae49e77">
-		<property name="net.sf.jasperreports.data.adapter" value="/data/PathLocationDataAdapter.xml"/>
+		<property name="net.sf.jasperreports.data.adapter" value="/data/PathLocationDataAdapter.jrdax"/>
 		<queryString language="csv">
 			<![CDATA[]]>
 		</queryString>
@@ -61,7 +63,7 @@
 			</textField>
 			<componentElement>
 				<reportElement positionType="Float" x="0" y="150" width="515" height="326" uuid="9f74e287-34ad-45ab-ac56-24b8da1661b4"/>
-				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" mapType="satellite" imageType="jpg" onErrorType="Icon">
+				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" mapType="satellite" imageType="jpg" onErrorType="Icon" markerClustering="false" markerSpidering="false">
 					<c:latitudeExpression><![CDATA[37.800056f]]></c:latitudeExpression>
 					<c:longitudeExpression><![CDATA[-122.4075f]]></c:longitudeExpression>
 					<c:zoomExpression><![CDATA[$P{zoom} + 1]]></c:zoomExpression>
@@ -118,25 +120,6 @@
 							</c:itemProperty>
 						</c:item>
 					</c:pathStyle>
-					<!--c:pathStyle>
-						<c:item>
-							<c:itemProperty name="name">
-								<valueExpression><![CDATA["test"]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="strokeColor">
-								<valueExpression><![CDATA["#FF0000"]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="strokeOpacity">
-								<valueExpression><![CDATA[0.5]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="strokeWeight">
-								<valueExpression><![CDATA[8]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="draggable">
-								<valueExpression><![CDATA[true]]></valueExpression>
-							</c:itemProperty>
-						</c:item>
-					</c:pathStyle-->
 					<c:pathData>
 						<dataset>
 							<datasetRun subDataset="PathLocationDataset" uuid="b9d465b5-397d-4c65-8814-e85e757c97d0"/>
@@ -162,27 +145,6 @@
 							</c:itemProperty>
 						</c:item>
 					</c:pathData>
-					<!--c:pathData>
-						<c:item>
-							<c:itemProperty name="latitude">
-								<valueExpression><![CDATA[37.787527f]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="longitude">
-								<valueExpression><![CDATA[-122.417235f]]></valueExpression>
-							</c:itemProperty>
-						</c:item>
-						<c:item>
-							<c:itemProperty name="latitude">
-								<valueExpression><![CDATA[37.778527f]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="longitude">
-								<valueExpression><![CDATA[-122.397235f]]></valueExpression>
-							</c:itemProperty>
-							<c:itemProperty name="style">
-								<valueExpression><![CDATA["test"]]></valueExpression>
-							</c:itemProperty>
-						</c:item>
-					</c:pathData-->
 				</c:map>
 			</componentElement>
 		</band>

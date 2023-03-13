@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version master-SNAPSHOT-6e472359fc4a9df81af28ed20eabc5b49da61610  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MapReport3" pageWidth="515" pageHeight="692" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="214b97f6-774e-4306-9b75-17aa13c9da20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
 	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<subDataset name="MarkersDataset" uuid="5e673a55-11e8-4dfd-b416-ddeb7960fb37">
-		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapter.xml"/>
+		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapter.jrdax"/>
 		<queryString language="csv">
 			<![CDATA[]]>
 		</queryString>
@@ -36,7 +38,7 @@
 			</textField>
 			<componentElement>
 				<reportElement positionType="Float" x="0" y="150" width="515" height="326" uuid="25c7dffb-88e1-4ce0-a12f-708a922a5063"/>
-				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" mapType="terrain" imageType="jpg" onErrorType="Icon">
+				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" mapType="terrain" imageType="jpg" onErrorType="Icon" markerClustering="false" markerSpidering="false">
 					<c:latitudeExpression><![CDATA[37.800056f]]></c:latitudeExpression>
 					<c:longitudeExpression><![CDATA[-122.4075f]]></c:longitudeExpression>
 					<c:zoomExpression><![CDATA[$P{zoom} + 1]]></c:zoomExpression>

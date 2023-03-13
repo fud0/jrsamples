@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version master-SNAPSHOT-6e472359fc4a9df81af28ed20eabc5b49da61610  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MapReport2" pageWidth="515" pageHeight="692" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ecfc2685-ba0e-435d-99a1-d9b7df6c8bd8">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="NO_DATA_ADAPTER"/>
+<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version master-SNAPSHOT-80f2325a803faeda39d214ef7133cd11d84eb756  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MapReport6" pageWidth="515" pageHeight="692" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ecfc2685-ba0e-435d-99a1-d9b7df6c8bd8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="map/data/CsvDataAdapterCluster.jrdax"/>
 	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<subDataset name="MarkersDataset" uuid="8a8227b3-f480-48f1-b65a-e4e691c0d620">
-		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapter.jrdax"/>
+		<property name="net.sf.jasperreports.data.adapter" value="/data/CsvDataAdapterCluster.jrdax"/>
 		<queryString language="csv">
 			<![CDATA[]]>
 		</queryString>
@@ -31,11 +31,11 @@
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="0" y="50" width="515" height="100" uuid="0823119a-3904-4438-93be-ad33282c05cf"/>
-				<textFieldExpression><![CDATA["A satellite map sample. Five markers with default icons are placed on the map. Marker tooltips are enabled."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["A satellite map sample. Multiple markers with default icons are placed on the map. Marker tooltips are enabled. Marker clustering and marker spidering are also enabled."]]></textFieldExpression>
 			</textField>
 			<componentElement>
 				<reportElement positionType="Float" x="0" y="150" width="515" height="326" uuid="2af840e6-b295-4b18-9002-3c34f3cc3276"/>
-				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" mapType="satellite" imageType="jpg" onErrorType="Blank" markerClustering="false" markerSpidering="false">
+				<c:map xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" imageType="jpg" onErrorType="Blank" markerClustering="true" markerSpidering="true">
 					<c:latitudeExpression><![CDATA[37.800056f]]></c:latitudeExpression>
 					<c:longitudeExpression><![CDATA[-122.4075f]]></c:longitudeExpression>
 					<c:zoomExpression><![CDATA[$P{zoom} + 1]]></c:zoomExpression>
@@ -55,6 +55,9 @@
 							</c:itemProperty>
 							<c:itemProperty name="label">
 								<valueExpression><![CDATA[$V{REPORT_COUNT} % 5 < 2 ? ""+$V{REPORT_COUNT}*$V{REPORT_COUNT} :($V{REPORT_COUNT} == 2 ? "abc" : "M")]]></valueExpression>
+							</c:itemProperty>
+							<c:itemProperty name="infowindow.content">
+								<valueExpression><![CDATA["<p style='text-align:right;'><img src='http://jasperreports.sourceforge.net/jasperreports.png'/></p><p style='text-align:left;'><b>"+$F{address}+"</b></p>"]]></valueExpression>
 							</c:itemProperty>
 						</c:item>
 					</c:markerData>
