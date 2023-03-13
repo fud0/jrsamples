@@ -4,7 +4,7 @@
 	<property name="net.sf.jasperreports.csv.source" value="data/CsvDataSource.txt"/>
 	<property name="net.sf.jasperreports.export.xls.column.width.ratio" value="1.25f"/>
 	<property name="net.sf.jasperreports.export.xls.sheet.tab.color" value="#00FF00"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="xlsfeatures/XlsFeaturesQE.xml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="xlsfeatures/XlsFeaturesQE.jrdax"/>
 	<property name="net.sf.jasperreports.export.xls.metadata.title" value="JasperReports XLS Features Sample Report"/>
 	<property name="net.sf.jasperreports.export.xls.metadata.subject" value="Shows how the specific XLS features could be used  when exporting to Excel formats."/>
 	<property name="net.sf.jasperreports.export.xls.metadata.author" value="JasperReports Project Team"/>
