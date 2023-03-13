@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.1.qualifier using JasperReports Library version 6.2.1  -->
-<!-- 2015-12-16T16:33:39 -->
+<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version develop-92-SNAPSHOT-3aabe085bba32b6a58d35b634a8f650aedc15873  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HorizontalReport" columnCount="3" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="175" columnSpacing="5" leftMargin="30" rightMargin="30" topMargin="30" bottomMargin="30" uuid="04f5af13-ab16-4921-bb63-039d345db20b">
 	<property name="net.sf.jasperreports.export.xls.detect.cell.type" value="true"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
@@ -177,7 +176,7 @@
 				<textElement textAlignment="Right">
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[(c)2001-2019 by teodord]]></text>
+				<text><![CDATA[(c)2001-2023 by teodord]]></text>
 			</staticText>
 			<textField evaluationTime="Report">
 				<reportElement x="235" y="55" width="100" height="40" uuid="bc1228b2-2513-4ed4-b1f5-af6561313ea2"/>
