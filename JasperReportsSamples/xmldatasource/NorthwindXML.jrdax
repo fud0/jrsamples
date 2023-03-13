@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmlDataAdapter class="net.sf.jasperreports.data.xml.XmlDataAdapterImpl">
+  <name>Northwind XML</name>
+  <dataFile type="repositoryDataLocation">
+    <location>data/northwind.xml</location>
+  </dataFile>
+  <selectExpression></selectExpression>
+  <useConnection>true</useConnection>
+  <locale>en_IT</locale>
+  <datePattern>yyyy-MM-dd</datePattern>
+  <numberPattern>#,##0.##</numberPattern>
+  <timeZone>Europe/Rome</timeZone>
+  <namespaceAware>false</namespaceAware>
+</xmlDataAdapter>
