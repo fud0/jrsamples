@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xmlDataAdapter class="net.sf.jasperreports.data.xml.XmlDataAdapterImpl">
+  <name>XML Http Data Adapter</name>
+  <dataFile type="httpDataLocation">
+    <url>http://localhost:8080/data.jsp?type=xml</url>
+  </dataFile>
+  <selectExpression></selectExpression>
+  <useConnection>true</useConnection>
+  <locale>en_IT</locale>
+  <timeZone>Europe/Rome</timeZone>
+  <namespaceAware>false</namespaceAware>
+</xmlDataAdapter>
