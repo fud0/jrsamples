@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.2.1.qualifier using JasperReports Library version 6.2.1  -->
-<!-- 2015-12-16T16:51:26 -->
+<!-- Created with Jaspersoft Studio version 8.2.0.qualifier using JasperReports Library version develop-92-SNAPSHOT-3aabe085bba32b6a58d35b634a8f650aedc15873  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HyperlinkReport" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" isTitleNewPage="true" isSummaryNewPage="true" uuid="b6054a7a-8e08-4610-9655-bf6d1d8be6ec">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<background>
@@ -37,21 +36,21 @@
 						<propertyExpression name="net.sf.jasperreports.export.xls.sheet.name"><![CDATA["First Page"]]></propertyExpression>
 					</reportElement>
 					<textFieldExpression><![CDATA["  >> Click here to go to the second page."]]></textFieldExpression>
-					<hyperlinkPageExpression><![CDATA[Integer.valueOf(2)]]></hyperlinkPageExpression>
+					<hyperlinkPageExpression><![CDATA[2]]></hyperlinkPageExpression>
 				</textField>
 				<textField hyperlinkType="Reference" hyperlinkTarget="Blank">
-					<reportElement x="5" y="95" width="200" height="15" uuid="773ef7f6-735d-47f7-8b16-d8136c5da1d3"/>
+					<reportElement x="5" y="95" width="300" height="15" uuid="773ef7f6-735d-47f7-8b16-d8136c5da1d3"/>
 					<textFieldExpression><![CDATA["  >> Click here to go to www.google.com"]]></textFieldExpression>
 					<hyperlinkReferenceExpression><![CDATA["http://www.google.com"]]></hyperlinkReferenceExpression>
 				</textField>
 				<image hAlign="Center" vAlign="Middle" hyperlinkType="Reference" hyperlinkTarget="Blank">
-					<reportElement x="230" y="90" width="200" height="30" uuid="82785a38-76be-4973-bea6-1614dbdaeec8"/>
+					<reportElement x="310" y="90" width="200" height="30" uuid="82785a38-76be-4973-bea6-1614dbdaeec8"/>
 					<imageExpression><![CDATA["google.gif"]]></imageExpression>
 					<hyperlinkReferenceExpression><![CDATA["http://www.google.com"]]></hyperlinkReferenceExpression>
 					<hyperlinkTooltipExpression><![CDATA["Searching for something?"]]></hyperlinkTooltipExpression>
 				</image>
 				<textField hyperlinkType="RemoteAnchor">
-					<reportElement x="5" y="125" width="350" height="15" uuid="a6fae2b6-f702-43e7-b0ad-896b1e1cf00f"/>
+					<reportElement x="5" y="125" width="400" height="15" uuid="a6fae2b6-f702-43e7-b0ad-896b1e1cf00f"/>
 					<textFieldExpression><![CDATA["  >> Click here to go to another PDF file (in fact, we use the same file)."]]></textFieldExpression>
 					<hyperlinkReferenceExpression><![CDATA["./HyperlinkReport.pdf"]]></hyperlinkReferenceExpression>
 					<hyperlinkAnchorExpression><![CDATA["title"]]></hyperlinkAnchorExpression>
